@@ -1,0 +1,944 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Casino App Styles */
+.casino-app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: white;
+}
+
+/* Login Screen */
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.login-card {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-width: 28rem;
+  width: 100%;
+}
+
+.login-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b, #fbbf24);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.error-message {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
+}
+
+.login-input::placeholder {
+  color: #9ca3af;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+}
+
+.login-button {
+  width: 100%;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+}
+
+.login-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.login-info {
+  text-align: center;
+  color: #9ca3af;
+  margin-top: 1rem;
+}
+
+/* Main App Layout */
+.app-container {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.app-header {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(71, 85, 105, 0.5);
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .header-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+}
+
+.header-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-subtitle {
+  color: #d1d5db;
+  margin-top: 0.25rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.balance-display {
+  text-align: center;
+}
+
+.balance-amount {
+  color: #10b981;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.balance-label {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.logout-button {
+  background: #ef4444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background: #dc2626;
+}
+
+/* Navigation */
+.nav-container {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(71, 85, 105, 0.5);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-button.active {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+}
+
+.nav-button.inactive {
+  color: #d1d5db;
+  background: transparent;
+}
+
+.nav-button.inactive:hover {
+  color: white;
+  background: #374151;
+}
+
+/* Grid Layouts */
+.grid-1 { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.grid-2 { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.grid-3 { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Cards */
+.card {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/* Stats Cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(55, 65, 81, 0.5);
+  border-radius: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value.blue { color: #60a5fa; }
+.stat-value.green { color: #34d399; }
+.stat-value.yellow { color: #fbbf24; }
+.stat-value.red { color: #f87171; }
+.stat-value.purple { color: #a78bfa; }
+
+.stat-label {
+  color: #d1d5db;
+  font-size: 0.875rem;
+}
+
+/* Game Buttons */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.game-button {
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.game-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.game-button.slot {
+  background: linear-gradient(135deg, #ef4444, #ec4899);
+}
+
+.game-button.blackjack {
+  background: linear-gradient(135deg, #374151, #111827);
+}
+
+.game-button.dice {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.game-button.roulette {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+/* Leaderboard */
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(55, 65, 81, 0.5);
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.leaderboard-item:hover {
+  background: rgba(55, 65, 81, 0.7);
+}
+
+.leaderboard-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.leaderboard-rank {
+  color: #fbbf24;
+  font-weight: 700;
+}
+
+.leaderboard-name {
+  color: white;
+  font-weight: 600;
+}
+
+.leaderboard-right {
+  text-align: right;
+}
+
+.leaderboard-balance {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.leaderboard-games {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+/* Games Section */
+.games-card {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.games-card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.games-card.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.games-card.disabled:hover {
+  transform: none;
+  border-color: rgba(71, 85, 105, 0.5);
+}
+
+.game-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.games-card:hover .game-icon {
+  transform: scale(1.1);
+}
+
+.game-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.game-description {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.game-play-button {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.game-coming-soon {
+  background: #4b5563;
+  color: #d1d5db;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  display: inline-block;
+}
+
+/* CONTINUES IN VERSION 2 - MINES GAME MODAL AND ANIMATIONS */
+/* CONTINUATION FROM VERSION 1 - MINES GAME MODAL AND ANIMATIONS */
+
+/* Mines Game Modal */
+.mines-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.mines-container {
+  background: linear-gradient(135deg, #1f2937, #1e3a8a);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  max-width: 64rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.mines-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.mines-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mines-close {
+  color: #9ca3af;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.mines-close:hover {
+  color: white;
+}
+
+.mines-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .mines-content {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* Mines Controls */
+.mines-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mines-control-card {
+  background: rgba(55, 65, 81, 0.5);
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(75, 85, 99, 0.5);
+}
+
+.mines-control-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.mines-input-group {
+  margin-bottom: 0.75rem;
+}
+
+.mines-label {
+  color: #d1d5db;
+  font-size: 0.875rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.mines-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.mines-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.mines-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mines-range {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.mines-balance {
+  text-align: center;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(59, 130, 246, 0.2));
+  border-radius: 0.5rem;
+}
+
+.mines-balance-text {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.mines-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.mines-stat-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mines-stat-label {
+  color: #d1d5db;
+}
+
+.mines-stat-value {
+  font-weight: 700;
+}
+
+.mines-stat-value.green { color: #10b981; }
+.mines-stat-value.yellow { color: #fbbf24; }
+.mines-stat-value.blue { color: #60a5fa; }
+.mines-stat-value.purple { color: #a78bfa; }
+
+.mines-button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mines-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.mines-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mines-button.primary {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+}
+
+.mines-button.success {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.mines-button.secondary {
+  background: linear-gradient(135deg, #4b5563, #374151);
+  color: white;
+}
+
+/* Mines Game Board */
+.mines-board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mines-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(55, 65, 81, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  position: relative;
+}
+
+/* Mines Tiles */
+.mines-tile {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.mines-tile:hover:not(.revealed) {
+  transform: scale(1.05) translateY(-2px);
+}
+
+.mines-tile.animating {
+  transform: scale(1.1);
+}
+
+.mines-tile.exploding {
+  animation: explode 0.5s ease-in-out infinite;
+}
+
+.mines-tile-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.mines-tile-face.unrevealed {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6, #1d4ed8);
+  border: 1px solid #93c5fd;
+}
+
+.mines-tile-face.unrevealed:hover {
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
+}
+
+.mines-tile-face.mine {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.5);
+  animation: pulse 2s infinite;
+}
+
+.mines-tile-face.safe {
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.4);
+}
+
+.mines-tile-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mines-tile-content.unrevealed {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+  border-radius: 0.5rem;
+}
+
+/* Game Over Overlay */
+.mines-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.mines-overlay-content {
+  text-align: center;
+}
+
+.mines-overlay-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: bounce 1s infinite;
+}
+
+.mines-overlay-icon.win {
+  color: #10b981;
+}
+
+.mines-overlay-icon.lose {
+  color: #ef4444;
+}
+
+.mines-overlay-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.mines-overlay-title.win {
+  color: #10b981;
+}
+
+.mines-overlay-title.lose {
+  color: #ef4444;
+}
+
+.mines-overlay-amount {
+  color: white;
+  font-size: 1.25rem;
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+  .mines-tile {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .mines-tile-face {
+    font-size: 0.875rem;
+  }
+  
+  .mines-container {
+    padding: 1rem;
+  }
+  
+  .mines-title {
+    font-size: 1.5rem;
+  }
+  
+  .app-container {
+    padding: 1rem;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-buttons {
+    flex-direction: column;
+  }
+  
+  .nav-button {
+    text-align: center;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes flip {
+  0% { transform: rotateY(0deg) scale(1); }
+  50% { transform: rotateY(90deg) scale(1.1); }
+  100% { transform: rotateY(0deg) scale(1); }
+}
+
+@keyframes explode {
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-2px, -2px) scale(1.05); }
+  50% { transform: translate(2px, -1px) scale(1.1); }
+  75% { transform: translate(-1px, 2px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% { transform: translate3d(0, 0, 0); }
+  40%, 43% { transform: translate3d(0, -10px, 0); }
+  70% { transform: translate3d(0, -5px, 0); }
+  90% { transform: translate3d(0, -2px, 0); }
+}
+
+/* Animation Classes */
+.animate-flip { animation: flip 0.6s ease-in-out; }
+.animate-explode { animation: explode 0.5s ease-in-out infinite; }
+.animate-fadeIn { animation: fadeIn 0.5s ease-out; }
+.animate-pulse { animation: pulse 2s infinite; }
+.animate-bounce { animation: bounce 1s infinite; }
+
+/* Additional Hover Effects */
+.mines-button.primary:hover:not(:disabled) {
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
+}
+
+.mines-button.success:hover:not(:disabled) {
+  box-shadow: 0 6px 12px rgba(16, 185, 129, 0.4);
+}
+
+.mines-button.secondary:hover:not(:disabled) {
+  box-shadow: 0 6px 12px rgba(75, 85, 99, 0.4);
+}
+
+/* Scrollbar Styling */
+.mines-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mines-container::-webkit-scrollbar-track {
+  background: rgba(55, 65, 81, 0.3);
+  border-radius: 4px;
+}
+
+.mines-container::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.5);
+  border-radius: 4px;
+}
+
+.mines-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
+}
+
+/* Focus States for Accessibility */
+.mines-input:focus,
+.mines-button:focus,
+.nav-button:focus,
+.login-input:focus,
+.login-button:focus {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+/* Loading States */
+.mines-button:disabled {
+  cursor: not-allowed;
+  background: #6b7280 !important;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .mines-tile-face.unrevealed {
+    border: 2px solid #ffffff;
+  }
+  
+  .mines-tile-face.mine {
+    border: 2px solid #ffffff;
+  }
+  
+  .mines-tile-face.safe {
+    border: 2px solid #ffffff;
+  }
+}
